@@ -21,6 +21,9 @@ RUN git clone https://github.com/flapjack/omnibus-ubuntu.git && \
     cd omnibus-ubuntu && \
     bundle install --binstubs
 
+ENV FLAPJACK_BUILD_REF v1.0.0rc5
+ENV FLAPJACK_PACKAGE_VERSION 1.0.0~rc5~dummy
+
 RUN git clone --branch omnibus3 https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs && \
