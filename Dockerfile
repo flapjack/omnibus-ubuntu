@@ -24,5 +24,5 @@ RUN git clone https://github.com/flapjack/omnibus-ubuntu.git && \
 RUN git clone --branch omnibus3 https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs && \
-    bin/omnibus build flapjack-dependencies
+    bin/omnibus build flapjack
 
