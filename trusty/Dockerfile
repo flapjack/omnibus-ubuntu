@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y \
     libexpat1-dev \
     libicu-dev
 
+RUN git config --global user.email "docker@flapjack.io" && \
+    git config --global user.name "Flapjack Docker Packager"
+
 RUN gem install bundler --no-ri --no-rdoc
 
 RUN git clone https://github.com/flapjack/omnibus-ubuntu.git && \
