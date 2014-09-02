@@ -17,10 +17,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN gem install bundler --no-ri --no-rdoc
 
-RUN git clone https://github.com/flapjack/omnibus-ubuntu.git && \
-    cd omnibus-ubuntu && \
-    bundle install --binstubs
-
 RUN git clone https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs
