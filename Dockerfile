@@ -13,8 +13,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     zlib1g-dev \
     libexpat1-dev \
-    libicu-dev \
-    awscli
+    libicu-dev
 
 RUN git config --global user.email "docker@flapjack.io" && \
     git config --global user.name "Flapjack Docker Packager"
@@ -28,10 +27,4 @@ RUN curl -o /tmp/go1.3.1.linux-amd64.tar.gz https://storage.googleapis.com/golan
 RUN git clone https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs
-
-RUN echo 'deb http://repo.aptly.info/ squeeze main' | tee  /etc/apt/sources.list.d/aptly.list && \
-    gpg --keyserver keys.gnupg.net --recv-keys 2A194991 && \
-    gpg -a --export 2A194991 | apt-key add - && \
-    apt-get update && \
-    apt-get install -y aptly
 
