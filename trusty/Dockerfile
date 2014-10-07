@@ -28,3 +28,9 @@ RUN git clone https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs
 
+RUN echo 'deb http://repo.aptly.info/ squeeze main' | tee  /etc/apt/sources.list.d/aptly.list && \
+    gpg --keyserver keys.gnupg.net --recv-keys 2A194991 && \
+    gpg -a --export 2A194991 | sudo apt-key add - && \
+    apt-get update && \
+    apt-get install -y aptly
+
