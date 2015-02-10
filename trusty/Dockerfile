@@ -25,6 +25,9 @@ RUN curl -o /tmp/go1.3.1.linux-amd64.tar.gz https://storage.googleapis.com/golan
     tar -C /usr/local -xzf /tmp/go1.3.1.linux-amd64.tar.gz && \
     echo "PATH=$PATH:/usr/local/go/bin" | tee /etc/profile.d/go.sh
 
+RUN git config --global user.email "docker@flapjack.io" && \
+    git config --global user.name "Flapjack Docker Packager"
+
 RUN git clone https://github.com/flapjack/omnibus-flapjack.git && \
     cd omnibus-flapjack && \
     bundle install --binstubs
