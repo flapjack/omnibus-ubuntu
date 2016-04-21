@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     git \
     curl \
     build-essential \
-    ruby1.9.1-full \
+    ruby-full \
     libssl-dev \
     libreadline-dev \
     libxslt1-dev \
